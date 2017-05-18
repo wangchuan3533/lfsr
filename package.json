@@ -1,0 +1,27 @@
+{
+  "name": "lfsr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangchuan3533/lfsr.git"
+  },
+  "keywords": [
+    "lfsr"
+  ],
+  "author": "wangchuan3533@gmail.com",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/wangchuan3533/lfsr/issues"
+  },
+  "homepage": "https://github.com/wangchuan3533/lfsr#readme"
+}
