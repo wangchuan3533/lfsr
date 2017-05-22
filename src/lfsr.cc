@@ -11,14 +11,19 @@ using v8::String;
 using v8::Number;
 using v8::Value;
 using v8::Exception;
-const uint64_t mask = 0x12345678;
-//const uint64_t mask = 0x1234;
+const uint64_t mask = 0x1234567890123; // 52 bits
+//const uint64_t mask = 0x12345678; // 32 bits
+//const uint64_t mask = 0x1234; // 16 bits
 
 uint64_t lfsr_next(uint64_t current)
 {
+  // 52 bit
+  uint64_t bit = ((current >> 0) ^ (current >> 1) ^ (current >> 3) ^ (current >> 6)) & 1;
+  return (current >> 1) | (bit << 51);
+
   // 32 bit
-  uint64_t bit = ((current >> 0) ^ (current >> 2) ^ (current >> 6) ^ (current >> 7)) & 1;
-  return (current >> 1) | (bit << 31);
+  //uint64_t bit = ((current >> 0) ^ (current >> 2) ^ (current >> 6) ^ (current >> 7)) & 1;
+  //return (current >> 1) | (bit << 31);
 
   // 16 bit
   //uint64_t bit = ((current >> 0) ^ (current >> 2) ^ (current >> 3) ^ (current >> 5)) & 1;

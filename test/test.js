@@ -1,9 +1,9 @@
 var lfsr = require('../build/Release/lfsr');
-var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var chars = 'abcdefghijklmnopqrstuvwxyz';
 
 function num2str(n) {
   var str = '';
-  for (var i = 0; i < 8; i++) {
+  for (var i = 0; i < 13; i++) {
     var rem = n % 16;
     str += chars[rem + 5];
     n = parseInt(n / 16);
